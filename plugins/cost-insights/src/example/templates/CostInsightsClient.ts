@@ -36,7 +36,6 @@ import {
 } from '@backstage/plugin-cost-insights';
 
 export class CostInsightsClient implements CostInsightsApi {
-
   async getLastCompleteBillingDate(): Promise<string> {
     return '2021-01-01'; // YYYY-MM-DD
   }
@@ -53,16 +52,19 @@ export class CostInsightsClient implements CostInsightsApi {
     return [];
   }
 
-  async getDailyMetricData(metric: string, intervals: string): Promise<MetricData> {
+  async getDailyMetricData(
+    metric: string,
+    intervals: string,
+  ): Promise<MetricData> {
     return {
       id: 'remove-me',
       format: 'number',
       aggregation: [],
       change: {
         ratio: 0,
-        amount: 0
-      }
-    }
+        amount: 0,
+      },
+    };
   }
 
   async getGroupDailyCost(group: string, intervals: string): Promise<Cost> {
@@ -71,9 +73,9 @@ export class CostInsightsClient implements CostInsightsApi {
       aggregation: [],
       change: {
         ratio: 0,
-        amount: 0
-      }
-    }
+        amount: 0,
+      },
+    };
   }
 
   async getProjectDailyCost(project: string, intervals: string): Promise<Cost> {
@@ -82,20 +84,23 @@ export class CostInsightsClient implements CostInsightsApi {
       aggregation: [],
       change: {
         ratio: 0,
-        amount: 0
-      }
-    }
+        amount: 0,
+      },
+    };
   }
 
-  async getCatalogEntityDailyCost(catalogEntityRef: string, intervals: string): Promise<Cost> {
+  async getCatalogEntityDailyCost(
+    catalogEntityRef: string,
+    intervals: string,
+  ): Promise<Cost> {
     return {
       id: 'remove-me',
       aggregation: [],
       change: {
         ratio: 0,
-        amount: 0
-      }
-    }
+        amount: 0,
+      },
+    };
   }
 
   async getProductInsights(options: ProductInsightsOptions): Promise<Entity> {
@@ -104,9 +109,9 @@ export class CostInsightsClient implements CostInsightsApi {
       aggregation: [0, 0],
       change: {
         ratio: 0,
-        amount: 0
+        amount: 0,
       },
-      entities: {}
-    }
+      entities: {},
+    };
   }
 }
